@@ -2,46 +2,37 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introducción a los Patrones de Diseño: Comportamiento
 
-Let's discover **Docusaurus in less than 5 minutes**.
+En este tutorial, exploraremos los **Patrones de Diseño de Comportamiento**, un conjunto de patrones orientados a la forma en que los objetos interactúan entre sí y cómo se comunican.
 
-## Getting Started
+## ¿Qué son los Patrones de Diseño de Comportamiento?
 
-Get started by **creating a new site**.
+Los **Patrones de Diseño de Comportamiento** se enfocan en los algoritmos y la asignación de responsabilidades entre los objetos. A diferencia de los patrones estructurales o creacionales, los patrones de comportamiento no definen la estructura de un sistema, sino la forma en que los objetos colaboran para lograr sus objetivos. Estos patrones permiten que las interacciones entre objetos sean flexibles, reutilizables y escalables.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Algunos ejemplos clave de los **Patrones de Diseño de Comportamiento** son:
 
-### What you'll need
+- **Command**: Encapsula una solicitud como un objeto, permitiendo que se parametrice con diferentes solicitudes, se pongan en cola o se registren las solicitudes.
+- **Observer**: Define una dependencia de uno a muchos entre objetos, de modo que cuando uno cambie de estado, todos sus dependientes sean notificados.
+- **Strategy**: Permite seleccionar un algoritmo en tiempo de ejecución. Se utiliza para cambiar el comportamiento de un objeto según la estrategia que se elija.
+- **Chain of Responsibility**: Permite pasar una solicitud a lo largo de una cadena de objetos receptores hasta que uno de ellos maneje la solicitud.
+- **State**: Permite a un objeto cambiar su comportamiento cuando su estado interno cambia, apareciendo como si cambiara de clase.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Comenzando con los Patrones de Diseño de Comportamiento
 
-## Generate a new site
+Para implementar los patrones de comportamiento, debes tener en cuenta la necesidad de delegar responsabilidades y permitir que los objetos interactúen de manera flexible. Es importante que el código sea extensible y fácil de modificar sin tener que modificar las clases existentes.
 
-Generate a new Docusaurus site using the **classic template**.
+### Requisitos para Implementar Patrones de Comportamiento
 
-The classic template will automatically be added to your project after you run the command:
+Para aplicar los patrones de comportamiento correctamente, necesitas tener un buen conocimiento de los principios SOLID, especialmente el principio de **Responsabilidad Única** y **Abierto/Cerrado**. Estos patrones se aplican generalmente cuando necesitas que el sistema maneje comportamientos cambiantes o complejos.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## Generar un nuevo ejemplo con un patrón de comportamiento
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Imagina que quieres aplicar el patrón **Strategy** en tu aplicación para cambiar el algoritmo de pago según el tipo de usuario. Primero, necesitas crear una interfaz que defina el método de pago:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+```javascript
+class PaymentStrategy {
+  pay(amount) {
+    throw new Error("Este método debe ser sobrescrito por una subclase");
+  }
+}
