@@ -2,60 +2,77 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-const FeatureList = [
+// Definir la lista de patrones de comportamiento
+const BehaviorPatternList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Chain of Responsibility',
+    imagePath: '/img/chain-of-responsibility.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Este patrón permite pasar solicitudes a lo largo de una cadena de manejadores hasta que uno de ellos procese la solicitud.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Observer',
+    imagePath: '/img/observer.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Define una relación de dependencia entre objetos, de manera que cuando un objeto cambia su estado, notifica a sus dependientes automáticamente.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Strategy',
+    imagePath: '/img/strategy.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Permite definir una familia de algoritmos y los hace intercambiables en tiempo de ejecución, separando la lógica del contexto donde se usan.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+// Componente para mostrar cada patrón de comportamiento
+function PatternFeature({ imagePath, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx('col col--12', styles.patternFeature)}>
+      <div className="row">
+        {/* Imagen a la izquierda */}
+        <div className="col col--3">
+          <div className="text--center">
+            <img src={imagePath} className={styles.patternSvg} alt={title} role="img" />
+          </div>
+        </div>
+
+        {/* Texto (título y descripción) a la derecha */}
+        <div className="col col--9">
+          <div className="padding-horiz--md">
+            <Heading as="h3" className={styles.featureTitle}>
+              {title}
+            </Heading>
+            <p className={styles.featureDescription}>{description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default function HomepageFeatures() {
+// Componente principal para mostrar todos los patrones de comportamiento
+export default function BehaviorPatternsFeatures() {
   return (
-    <section className={styles.features}>
+    <section className={styles.patternsSection}>
       <div className="container">
+        <Heading as="h2" className={styles.sectionTitle}>
+          Patrones de Diseño: De Comportamiento
+        </Heading>
+        <p className={styles.sectionSubtitle}>
+          Aprende cómo mejorar la comunicación y coordinación entre objetos en tu sistema.
+        </p>
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {BehaviorPatternList.map((pattern, idx) => (
+            <PatternFeature key={idx} {...pattern} />
           ))}
         </div>
       </div>
