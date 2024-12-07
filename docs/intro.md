@@ -25,14 +25,3 @@ Para implementar los patrones de comportamiento, debes tener en cuenta la necesi
 ### Requisitos para Implementar Patrones de Comportamiento
 
 Para aplicar los patrones de comportamiento correctamente, necesitas tener un buen conocimiento de los principios SOLID, especialmente el principio de **Responsabilidad Única** y **Abierto/Cerrado**. Estos patrones se aplican generalmente cuando necesitas que el sistema maneje comportamientos cambiantes o complejos.
-
-## Generar un nuevo ejemplo con un patrón de comportamiento
-
-Imagina que quieres aplicar el patrón **Strategy** en tu aplicación para cambiar el algoritmo de pago según el tipo de usuario. Primero, necesitas crear una interfaz que defina el método de pago:
-
-```javascript
-class PaymentStrategy {
-  pay(amount) {
-    throw new Error("Este método debe ser sobrescrito por una subclase");
-  }
-}

@@ -2,7 +2,7 @@
 const config = {
   title: 'Patrones de Diseño',
   tagline: 'Explora patrones de comportamiento',
-  url: 'https://tusitio.com', // Cambia a la URL de tu proyecto
+  url: 'https://tusitio.com', 
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

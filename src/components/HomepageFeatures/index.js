@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const BehaviorPatternList = [
   {
     title: 'Chain of Responsibility',
-    imagePath: '/img/undraw_docusaurus_mountain.svg',
+    imagePath: '/img/chain-of-responsibility.png',
     description: (
       <>
         Este patrón permite pasar solicitudes a lo largo de una cadena de manejadores hasta que uno de ellos procese la solicitud.
@@ -15,7 +15,7 @@ const BehaviorPatternList = [
   },
   {
     title: 'Observer',
-    imagePath: '/img/undraw_docusaurus_tree.svg',
+    imagePath: '/img/observer.png',
     description: (
       <>
         Define una relación de dependencia entre objetos, de manera que cuando un objeto cambia su estado, notifica a sus dependientes automáticamente.
@@ -24,7 +24,7 @@ const BehaviorPatternList = [
   },
   {
     title: 'Strategy',
-    imagePath: '/img/undraw_docusaurus_react.svg',
+    imagePath: '/img/strategy.png',
     description: (
       <>
         Permite definir una familia de algoritmos y los hace intercambiables en tiempo de ejecución, separando la lógica del contexto donde se usan.
