@@ -1,23 +1,119 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
+/* Estilos principales para la página */
+.customHeroBanner {
+  background: linear-gradient(135deg, #4e6d8c, #3a4a63); /* Colores más sofisticados (grises azulados) */
+  color: #F1F1F1; /* Blanco suave */
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.customHeroBanner::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(50, 70, 90, 0.15), transparent 70%);
+  z-index: 0;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2a2a2a; /* Título en gris oscuro */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: blinkTextShadow 2s infinite alternate; /* Animación más suave */
+}
+
+/* Definición de la animación para la sombra parpadeante */
+@keyframes blinkTextShadow {
+  0% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 69, 0, 0.3); /* Sombra suave con un toque cálido */
+  }
+  50% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 0 0 30px rgba(34, 193, 195, 0.3); /* Cambio de color a verde-agua */
+  }
+  100% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 0 0 30px rgba(253, 187, 45, 0.3); /* Cambio a dorado suave */
   }
 }
 
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: #B0BEC5; /* Gris azulado suave */
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.customButton {
+  background-color: #4e6d8c; /* Gris azulado oscuro */
+  color: #F1F1F1; /* Blanco suave */
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.customButton:hover {
+  background-color: #374c63; /* Azul oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mainContent {
+  padding: 3rem 1.5rem;
+  background: #F1F1F1; /* Blanco suave */
+  color: #2a2a2a; /* Gris oscuro */
+  line-height: 1.8;
+}
+
+.mainContent h2,
+.mainContent h3 {
+  color: #4e6d8c; /* Gris azulado oscuro */
+  margin-bottom: 1.5rem;
+}
+
+.mainContent p {
+  color: #2a2a2a; /* Gris oscuro */
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .customButton {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
 }
